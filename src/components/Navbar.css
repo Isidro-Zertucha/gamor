@@ -1,0 +1,165 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #2a2d3a;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.navbar.light {
+  background-color: #f8f9fa;
+  color: #2a2d3a;
+}
+
+.navbar-left {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-item-container {
+  position: relative;
+}
+
+.nav-item {
+  color: #8b8d97;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar.light .nav-item {
+  color: #6b7280;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+.navbar.light .nav-item:hover {
+  color: #2a2d3a;
+}
+
+.nav-item.active {
+  color: #ff6b35;
+  background-color: rgba(255, 107, 53, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.navbar.light .nav-item.active {
+  color: #8b5cf6;
+  background-color: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.home-decoration {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ff6b35;
+}
+
+.navbar.light .home-decoration {
+  color: #8b5cf6;
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-blur {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(15px);
+  z-index: 0;
+}
+
+.navbar.light .logo-blur {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar.light .logo {
+  color: #2a2d3a;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.sign-in-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar.light .sign-in-btn {
+  color: #2a2d3a;
+}
+
+.sign-in-btn:hover {
+  color: #ff6b35;
+}
+
+.navbar.light .sign-in-btn:hover {
+  color: #8b5cf6;
+}
+
+.create-account-btn {
+  background-color: #2A2E34;
+  border: 1px solid #4a4d5a;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar.light .create-account-btn {
+  background-color: #2a2d3a;
+  border: 1px solid #2a2d3a;
+  color: white;
+}
+
+.create-account-btn:hover {
+  background-color: #4a4d5a;
+  border-color: #5a5d6a;
+}
+
+.navbar.light .create-account-btn:hover {
+  background-color: #1f2937;
+  border-color: #1f2937;
+}
