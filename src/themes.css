@@ -1,0 +1,30 @@
+
+:root {
+  --background-primary: #2a2d3a;
+  --background-secondary: #2A2E34;
+  --background-tertiary: #383E46;
+  --background-quaternary: #4a4d5a;
+  --text-primary: #ffffff;
+  --text-secondary: #8b8d97;
+  --accent-primary: #ff6b35;
+  --accent-secondary: #8b5cf6;
+  --accent-primary-light: #ff8a50;
+  --accent-secondary-light: #a855f7;
+  --border-primary: #6b7280;
+  --border-secondary: #9ca3af;
+}
+
+body.light {
+  --background-primary: #f8f9fa;
+  --background-secondary: #ffffff;
+  --background-tertiary: #f1f3f4;
+  --background-quaternary: #e5e7eb;
+  --text-primary: #2a2d3a;
+  --text-secondary: #6b7280;
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #ff6b35;
+  --accent-primary-light: #a855f7;
+  --accent-secondary-light: #ff8a50;
+  --border-primary: #e5e7eb;
+  --border-secondary: #d1d5db;
+}

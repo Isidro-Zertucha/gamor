@@ -1,6 +1,6 @@
 import "./Categories.css"
 
-const Categories = ({ isLightTheme }: { isLightTheme: boolean }) => {
+const Categories = () => {
   const categories = [
     { id: 1, number: "01", name: "Action Games" },
     { id: 2, number: "02", name: "Sports Games" },
@@ -11,7 +11,7 @@ const Categories = ({ isLightTheme }: { isLightTheme: boolean }) => {
   ]
 
   return (
-    <div className={`categories ${isLightTheme ? "light" : ""}`}>
+    <div className="categories">
       <h2 className="categories-title">Trending Categories</h2>
 
       <div className="categories-grid">

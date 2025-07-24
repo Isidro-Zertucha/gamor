@@ -3,14 +3,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background-color: #2a2d3a;
-  color: white;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
   transition: all 0.3s ease;
-}
-
-.navbar.light {
-  background-color: #f8f9fa;
-  color: #2a2d3a;
 }
 
 .navbar-left {
@@ -24,7 +19,7 @@
 }
 
 .nav-item {
-  color: #8b8d97;
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
@@ -32,30 +27,16 @@
   position: relative;
 }
 
-.navbar.light .nav-item {
-  color: #6b7280;
-}
-
 .nav-item:hover {
-  color: white;
-}
-
-.navbar.light .nav-item:hover {
-  color: #2a2d3a;
+  color: var(--text-primary);
 }
 
 .nav-item.active {
-  color: #ff6b35;
+  color: var(--accent-primary);
   background-color: rgba(255, 107, 53, 0.1);
   padding: 8px 16px;
   border-radius: 20px;
   border: 1px solid rgba(255, 107, 53, 0.2);
-}
-
-.navbar.light .nav-item.active {
-  color: #8b5cf6;
-  background-color: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.2);
 }
 
 .home-decoration {
@@ -63,11 +44,7 @@
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  color: #ff6b35;
-}
-
-.navbar.light .home-decoration {
-  color: #8b5cf6;
+  color: var(--accent-primary);
 }
 
 .navbar-center {
@@ -93,20 +70,12 @@
   z-index: 0;
 }
 
-.navbar.light .logo-blur {
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
-}
-
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: white;
+  color: var(--text-primary);
   position: relative;
   z-index: 1;
-}
-
-.navbar.light .logo {
-  color: #2a2d3a;
 }
 
 .navbar-right {
@@ -118,29 +87,21 @@
 .sign-in-btn {
   background: none;
   border: none;
-  color: white;
+  color: var(--text-primary);
   font-size: 16px;
   cursor: pointer;
   padding: 8px 16px;
   transition: color 0.3s ease;
 }
 
-.navbar.light .sign-in-btn {
-  color: #2a2d3a;
-}
-
 .sign-in-btn:hover {
-  color: #ff6b35;
-}
-
-.navbar.light .sign-in-btn:hover {
-  color: #8b5cf6;
+  color: var(--accent-primary);
 }
 
 .create-account-btn {
-  background-color: #2A2E34;
-  border: 1px solid #4a4d5a;
-  color: white;
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
   padding: 16px 24px;
   border-radius: 25px;
   font-size: 16px;
@@ -148,18 +109,7 @@
   transition: all 0.3s ease;
 }
 
-.navbar.light .create-account-btn {
-  background-color: #2a2d3a;
-  border: 1px solid #2a2d3a;
-  color: white;
-}
-
 .create-account-btn:hover {
-  background-color: #4a4d5a;
-  border-color: #5a5d6a;
-}
-
-.navbar.light .create-account-btn:hover {
-  background-color: #1f2937;
-  border-color: #1f2937;
+  background-color: var(--background-quaternary);
+  border-color: var(--border-secondary);
 }

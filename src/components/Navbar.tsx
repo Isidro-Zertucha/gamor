@@ -1,8 +1,8 @@
 import "./Navbar.css"
 
-const Navbar = ({ isLightTheme }: { isLightTheme: boolean }) => {
+const Navbar = () => {
   return (
-    <nav className={`navbar ${isLightTheme ? "light" : ""}`}>
+    <nav className="navbar">
       <div className="navbar-left">
         <div className="nav-item-container">
           <a href="#" className="nav-item active">

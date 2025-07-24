@@ -1,6 +1,6 @@
 import "./MainBoard.css"
 
-const MainBoard = ({ isLightTheme }: { isLightTheme: boolean }) => {
+const MainBoard = () => {
   const players = [
     { id: 1, name: "Dr Team", avatar: "👨‍⚕️", status: "online" },
     { id: 2, name: "Mia Plays", avatar: "👩", status: "online" },
@@ -9,7 +9,7 @@ const MainBoard = ({ isLightTheme }: { isLightTheme: boolean }) => {
   ]
 
   return (
-    <div className={`mainboard ${isLightTheme ? "light" : ""}`}>
+    <div className="mainboard">
       {/* Left Widget with Gray Background */}
       <div className="left-widget">
         <div className="hero-text">
@@ -59,7 +59,7 @@ const MainBoard = ({ isLightTheme }: { isLightTheme: boolean }) => {
           </div>
           <div className="character-container">
             <img
-              src={isLightTheme ? "/fortnite-character-light.png" : "/fortnite-character.png"}
+              src="/fortnite-character.png"
               alt="Fortnite Character"
               className="character-image"
             />

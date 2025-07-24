@@ -9,22 +9,14 @@ body {
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #2a2d3a;
+  background-color: var(--background-primary);
   transition: background-color 0.3s ease;
-}
-
-body.light {
-  background-color: #f8f9fa;
 }
 
 .App {
   min-height: 100vh;
-  background-color: #2a2d3a;
+  background-color: var(--background-primary);
   transition: background-color 0.3s ease;
-}
-
-.App.light {
-  background-color: #f8f9fa;
 }
 
 .theme-toggle {
@@ -35,8 +27,8 @@ body.light {
   height: 60px;
   border-radius: 50%;
   border: none;
-  background-color: #ff6b35;
-  color: white;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
   font-size: 24px;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -47,8 +39,4 @@ body.light {
 .theme-toggle:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.App.light .theme-toggle {
-  background-color: #8b5cf6;
 }
