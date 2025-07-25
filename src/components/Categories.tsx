@@ -41,9 +41,8 @@ const Categories = () => {
 
         {/* View All card */}
         <div className="category-card view-all">
-          <div className="category-number">/04</div>
+          <div className="category-number">VIEW ALL</div>
           <div className="category-content">
-            <div className="view-all-label">VIEW ALL</div>
             <h3 className="category-name">All Categories</h3>
             <button className="category-icon">-▶</button>
           </div>

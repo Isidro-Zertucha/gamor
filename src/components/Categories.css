@@ -51,10 +51,6 @@
   transform: translateY(-5px);
 }
 
-.category-card.view-all {
-  background-color: var(--background-quaternary);
-  border: 2px dashed var(--border-primary);
-}
 
 .category-number {
   font-size: 14px;
