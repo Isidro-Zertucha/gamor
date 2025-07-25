@@ -69,6 +69,7 @@
   position: relative;
 }
 
+/*
 .streaming-text::after {
   content: "";
   position: absolute;
@@ -79,7 +80,7 @@
   background: linear-gradient(90deg, var(--accent-secondary), var(--accent-secondary-light));
   border-radius: 2px;
 }
-
+*/
 .subtitle {
   color: var(--text-secondary);
   font-size: 18px;
@@ -145,6 +146,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center; /* Center the content horizontally */
 }
 
 .card-header h2 {
@@ -161,11 +163,41 @@
   color: var(--text-primary);
 }
 
+.timer-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.add-friend-btn {
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.267);
+  border: 0px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.add-friend-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .timer {
   background-color: rgba(255, 255, 255, 0.9);
   color: var(--accent-primary);
   padding: 12px 24px;
   border-radius: 25px;
+  width: 140px;
   display: inline-block;
   font-size: 18px;
   font-weight: bold;

@@ -1,6 +1,6 @@
 
 :root {
-  --background-primary: #2a2d3a;
+  --background-primary: rgb(42, 45, 58);
   --background-secondary: #2A2E34;
   --background-tertiary: #383E46;
   --background-quaternary: #4a4d5a;
@@ -16,7 +16,7 @@
 }
 
 body.light {
-  --background-primary: #f8f9fa;
+  --background-primary: rgb(248, 249, 250);
   --background-secondary: #ffffff;
   --background-tertiary: #f1f3f4;
   --background-quaternary: #e5e7eb;

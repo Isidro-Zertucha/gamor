@@ -62,12 +62,26 @@
 
 .logo-blur {
   position: absolute;
-  width: 80px;
-  height: 40px;
-  background: radial-gradient(circle, rgba(255, 107, 53, 0.3) 0%, transparent 70%);
+  width: 19px;
+  height: 19px;
   border-radius: 50%;
-  filter: blur(15px);
-  z-index: 0;
+  z-index: 2;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* Frosted glass effect */
+  background-color: rgba(var(--background-primary), 0.05);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 0.1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .logo-blur {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
 .logo {
