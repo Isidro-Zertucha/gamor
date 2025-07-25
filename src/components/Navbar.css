@@ -99,9 +99,9 @@
 }
 
 .create-account-btn {
-  background-color: var(--text-primary);
+  background-color: #2a2d3a;
   border: 1px solid var(--border-primary);
-  color: var(--background-secondary);
+  color: #ffffff;
   padding: 16px 24px;
   border-radius: 25px;
   font-size: 16px;

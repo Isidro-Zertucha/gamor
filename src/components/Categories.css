@@ -47,7 +47,7 @@
 }
 
 .category-card.featured:hover {
-  background: linear-gradient(135deg, #7c3aed, #9333ea);
+  background: linear-gradient(135deg, var(--accent-secondary-light), var(--accent-secondary));
   transform: translateY(-5px);
 }
 

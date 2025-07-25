@@ -1,3 +1,4 @@
+import { SignedOut, SignInButton, SignUpButton } from "@clerk/clerk-react";
 import "./MainBoard.css"
 
 const MainBoard = () => {
@@ -40,10 +41,16 @@ const MainBoard = () => {
           <p className="subtitle">
             gamor now has <span className="highlight">stream party</span> platform
           </p>
-          <div className="action-buttons">
-            <button className="create-account-main">Create account</button>
-            <button className="sign-in-main">Sign in</button>
-          </div>
+          <SignedOut>
+            <div className="action-buttons">
+              <SignUpButton>
+                <button className="create-account-main">Create account</button>
+              </SignUpButton>
+              <SignInButton>
+                <button className="sign-in-main">Sign in</button>
+              </SignInButton>
+            </div>
+          </SignedOut>
         </div>
       </div>
 
