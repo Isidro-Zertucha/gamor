@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
 import "./Navbar.css"
 
 const Navbar = () => {
@@ -34,8 +35,17 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-right">
-        <button className="sign-in-btn">Sign in</button>
-        <button className="create-account-btn">Create account</button>
+        <SignedOut>
+          <SignInButton>
+            <button className="sign-in-btn">Sign in</button>
+          </SignInButton>
+          <SignUpButton>
+            <button className="create-account-btn">Create account</button>
+          </SignUpButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </nav>
   )
