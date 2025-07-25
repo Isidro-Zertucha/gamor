@@ -8,6 +8,7 @@
   --text-secondary: #8b8d97;
   --accent-primary: #ff6b35;
   --accent-secondary: #8b5cf6;
+  --accent-terciary: #474E55;
   --accent-primary-light: #ff8a50;
   --accent-secondary-light: #a855f7;
   --border-primary: #6b7280;
@@ -23,6 +24,7 @@ body.light {
   --text-secondary: #6b7280;
   --accent-primary: #8b5cf6;
   --accent-secondary: #ff6b35;
+  --accent-terciary: #f8f9fa;
   --accent-primary-light: #a855f7;
   --accent-secondary-light: #ff8a50;
   --border-primary: #e5e7eb;

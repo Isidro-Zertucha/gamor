@@ -87,7 +87,7 @@
 }
 
 .highlight {
-  color: var(--accent-primary);
+  color: var(--text-primary);
   text-decoration: underline;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .create-account-main {
-  background-color: var(--background-secondary); /* Gray background instead of orange */
+  background-color: var(--accent-terciary);
   border: none;
   color: var(--text-primary);
   padding: 15px 30px;
@@ -232,7 +232,7 @@
 }
 
 .tab.active {
-  background-color: var(--accent-primary);
+  background-color: var(--accent-terciary);
   color: var(--text-primary);
   font-weight: 600;
 }
@@ -283,8 +283,8 @@
 /* Add darker containers */
 .platform-tabs-container {
   background-color: var(--background-primary);
-  border-radius: 15px;
-  padding: 15px;
+  border-radius: 50px;
+  padding: 6px;
 }
 
 .game-content-container {
@@ -341,8 +341,8 @@
   display: flex;
   gap: -8px;
   order: 3;
-  margin-left: 20px; /* Fixed positioning instead of auto */
-  margin-right: 20px;
+  margin-right: 40%;
+
 }
 
 .avatar-circle {
@@ -391,12 +391,12 @@
 
 .add-player {
   order: 4; /* Keep add button at the end */
-  background-color: var(--background-secondary);
+  background-color: var(--accent-terciary);
   border: none;
   color: var(--text-primary);
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: 25%;
   cursor: pointer;
   font-size: 18px;
   display: flex;
@@ -428,6 +428,7 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  height: 70px;
   width: 100%;
   transition: all 0.3s ease;
   margin-top: 20px; /* Add top margin for spacing */
