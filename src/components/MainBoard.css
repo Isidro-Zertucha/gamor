@@ -287,7 +287,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0;
+  margin-bottom: 40px; /* Add margin to create space for the separator */
 }
 
 .game-name {
@@ -306,9 +306,11 @@
 }
 
 .game-separator {
+  position: absolute;
+  left: 0;
+  right: 0;
   height: 1px;
   background-color: var(--background-quaternary);
-  margin: 20px 0;
   opacity: 0.3;
 }
 
@@ -320,6 +322,7 @@
 }
 
 .game-content-container {
+  position: relative; /* Add position relative to contain the separator */
   background-color: var(--background-primary);
   border-radius: 15px;
   padding: 20px;
