@@ -17,6 +17,7 @@
   padding: 40px;
   display: flex;
   align-items: center;
+  justify-content: center;
   /* Remove min-height - let flex container control height */
 }
 
@@ -369,15 +370,13 @@
 .player-name {
   font-weight: 500;
   order: 2; /* Name comes after number */
-  flex: 1;
+  flex-grow: 1;
 }
 
 .player-avatars {
   display: flex;
   gap: -8px;
   order: 3;
-  margin-right: 40%;
-
 }
 
 .avatar-circle {
@@ -472,4 +471,35 @@
 .search-now-btn:hover {
   background-color: var(--background-quaternary);
   transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  .mainboard {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-widget,
+  .center-widget,
+  .right-widget {
+    flex: 1; /* Reset flex property */
+    border-radius: 20px !important; /* Add border-radius to all widgets */
+    margin-bottom: 20px; /* Add some space between stacked widgets */
+  }
+
+  .right-widget {
+    margin-bottom: 0; /* No margin for the last widget */
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+
+  .platform-tabs {
+    flex-wrap: wrap;
+  }
 }

@@ -1,7 +1,13 @@
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
+import { useState } from "react";
 import "./Navbar.css"
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -47,6 +53,40 @@ const Navbar = () => {
           <UserButton />
         </SignedIn>
       </div>
+
+      <div className="hamburger-menu" onClick={toggleMobileMenu}>
+        <div className={`bar ${isMobileMenuOpen ? "open" : ""}`}></div>
+        <div className={`bar ${isMobileMenuOpen ? "open" : ""}`}></div>
+        <div className={`bar ${isMobileMenuOpen ? "open" : ""}`}></div>
+      </div>
+
+      {isMobileMenuOpen && (
+        <div className="mobile-nav">
+          <a href="#" className="nav-item active">
+            Home
+          </a>
+          <a href="#" className="nav-item">
+            Streams
+          </a>
+          <a href="#" className="nav-item">
+            Party
+          </a>
+          <a href="#" className="nav-item">
+            Premium
+          </a>
+          <SignedOut>
+            <SignInButton>
+              <button className="sign-in-btn">Sign in</button>
+            </SignInButton>
+            <SignUpButton>
+              <button className="create-account-btn">Create account</button>
+            </SignUpButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
+      )}
     </nav>
   )
 }
