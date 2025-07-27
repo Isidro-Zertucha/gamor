@@ -1,7 +1,27 @@
 import { SignedOut, SignInButton, SignUpButton } from "@clerk/clerk-react";
 import "./MainBoard.css"
+import { useState, useEffect } from 'react';
+import fortniteCharacter from '../assets/images/fortnite-character-1.png';
+import fortniteCharacterDark from '../assets/images/fortnite-character-2.png';
 
 const MainBoard = () => {
+  const [isLightTheme, setIsLightTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? savedTheme === "light" : true;
+  });
+
+  useEffect(() => {
+    const handleThemeChange = (event: Event) => {
+      const customEvent = event as CustomEvent<{ theme: string }>;
+      setIsLightTheme(customEvent.detail.theme === "light");
+    };
+
+    window.addEventListener("theme-change", handleThemeChange);
+
+    return () => {
+      window.removeEventListener("theme-change", handleThemeChange);
+    };
+  }, []);
   const players = [
     { id: 1, name: "Dr Team", avatar: "👨‍⚕️", status: "online" },
     { id: 2, name: "Mia Plays", avatar: "👩", status: "online" },
@@ -71,7 +91,7 @@ const MainBoard = () => {
           </div>
           <div className="character-container">
             <img
-              src="/fortnite-character.png"
+              src={isLightTheme ? fortniteCharacter : fortniteCharacterDark}
               alt="Fortnite Character"
               className="character-image"
             />
