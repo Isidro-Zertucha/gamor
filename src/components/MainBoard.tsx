@@ -27,8 +27,8 @@ const MainBoard = () => {
     {
       id: 1,
       players: [
-        { id: 1, name: "Dr Team", avatar: "👨‍⚕️", status: "online", character: "fortnite-character-1.png", backgroundColor: "#ff6b6b" },
-        { id: 2, name: "Mia Plays", avatar: "👩", status: "online", character: "fortnite-character-2.png", backgroundColor: "#4ecdc4" },
+        { id: 1, name: "Dr Team", avatar: "👨‍⚕️", status: "online", character: "fortnite-character-11.png", backgroundColor: "#ff6b6b" },
+        { id: 2, name: "Mia Plays", avatar: "👩", status: "online", character: "fortnite-character-12.png", backgroundColor: "#4ecdc4" },
       ],
     },
     {
@@ -55,6 +55,16 @@ const MainBoard = () => {
       ],
     },
   ];
+
+  const [selectedTeam, setSelectedTeam] = useState<Team | null>(null);
+
+  const handleTeamSelect = (team: Team) => {
+    setSelectedTeam(selectedTeam?.id === team.id ? null : team);
+  };
+
+  const getCharacterImage = (character: string) => {
+    return new URL(`../assets/images/${character}`, import.meta.url).href;
+  };
 
   return (
     <div className="mainboard">
@@ -122,6 +132,19 @@ const MainBoard = () => {
               alt="Fortnite Character"
               className="character-image"
             />
+            {selectedTeam && (
+              <div className="selected-team-characters">
+                {selectedTeam.players.map((player, index) => (
+                  <img
+                    key={player.id}
+                    src={getCharacterImage(player.character)}
+                    alt={player.name}
+                    className="team-character-image"
+                    style={{ transform: `rotate(${index * (360 / selectedTeam.players.length)}deg) translate(150px) rotate(-${index * (360 / selectedTeam.players.length)}deg)` }}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -177,9 +200,10 @@ const MainBoard = () => {
                     ))}
                   </div>
                   <span className="player-name">{team.players.map(p => p.name).join(", ")}</span>
-                  <button className="add-player">+</button>
+                  <button className="add-player" onClick={() => handleTeamSelect(team)}>+</button>
                 </div>
-              ))}
+              ))
+              }
             </div>
 
             <button className="search-now-btn">Search Now</button>
