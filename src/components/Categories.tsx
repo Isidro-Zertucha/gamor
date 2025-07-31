@@ -35,7 +35,7 @@ const Categories = () => {
             <button className="category-icon">-▶</button>
           </div>
           <div className="featured-image">
-            <img src="/fortnite-character.png" alt="Shooter Games" />
+            <img src="/fortnite-character-1.png" alt="Shooter Games" />
           </div>
         </div>
 
