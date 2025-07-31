@@ -19,7 +19,7 @@ const MainBoard = () => {
 
   const handleSelectGame = (gameName: string) => {
     setSelectedGame(gameName);
-    setTeams(generateRandomTeams(4)); // Generate teams on game selection
+    //setTeams(generateRandomTeams(4)); // Generate teams on game selection
     setIsPopupOpen(false);
   };
 
