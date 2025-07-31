@@ -516,10 +516,9 @@
 
 .team-character-image {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 60px;
+  height: 60px;
+  border-radius: 25%;
+  background-color: rgba(0, 0, 0, 0.199);
   transition: all 0.3s ease;
 }
