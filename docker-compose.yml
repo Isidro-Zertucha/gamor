@@ -1,0 +1,13 @@
+services:
+  web:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_CLERK_PUBLISHABLE_KEY=${VITE_CLERK_PUBLISHABLE_KEY}
+        - VITE_IGDB_CLIENT_ID=${VITE_IGDB_CLIENT_ID}
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
