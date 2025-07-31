@@ -1,4 +1,4 @@
-import type { Game, Genre } from '../interfaces/types';
+/*import type { Game, Genre } from '../interfaces/types';
 
 const VITE_IGDB_CLIENT_ID = import.meta.env.VITE_IGDB_CLIENT_ID as string;
 const VITE_TWITCH_CLIENT_SECRET = import.meta.env.VITE_TWITCH_CLIENT_SECRET as string;
@@ -79,4 +79,4 @@ export const getGamesByGenre = async (genreSlug: string): Promise<Game[]> => {
     console.error(`Error al obtener juegos para el género ${genreSlug}:`, error);
     return [];
   }
-};
+};*/

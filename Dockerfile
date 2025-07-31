@@ -18,7 +18,7 @@ COPY . .
 
 # Set build-time arguments
 ARG VITE_CLERK_PUBLISHABLE_KEY
-ARG VITE_IGDB_CLIENT_ID
+#ARG VITE_IGDB_CLIENT_ID
 
 # Build the application, passing the arguments as environment variables
 RUN pnpm run build

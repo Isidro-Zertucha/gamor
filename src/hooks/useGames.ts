@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+/*import { useState, useEffect, useCallback } from 'react';
 import { getGenres, getGamesByGenre } from '../services/igdbService';
 import type { Game, Genre } from '../interfaces/types';
 
@@ -52,4 +52,4 @@ export const useGamesByGenre = (genreSlug: string) => {
   }, [genreSlug, fetchGames]);
 
   return { games, loading, error };
-};
+};*/
