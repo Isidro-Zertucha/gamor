@@ -3,6 +3,7 @@ import "./MainBoard.css"
 import { useState, useEffect } from 'react';
 import fortniteCharacter from '../assets/images/fortnite-character-1.png';
 import fortniteCharacterDark from '../assets/images/fortnite-character-2.png';
+import type { Team } from "../interfaces/types";
 
 const MainBoard = () => {
   const [isLightTheme, setIsLightTheme] = useState(() => {
@@ -22,12 +23,38 @@ const MainBoard = () => {
       window.removeEventListener("theme-change", handleThemeChange);
     };
   }, []);
-  const players = [
-    { id: 1, name: "Dr Team", avatar: "👨‍⚕️", status: "online" },
-    { id: 2, name: "Mia Plays", avatar: "👩", status: "online" },
-    { id: 3, name: "Keover", avatar: "👨", status: "online" },
-    { id: 4, name: "Nickmore", avatar: "🧑", status: "offline" },
-  ]
+  const teams: Team[] = [
+    {
+      id: 1,
+      players: [
+        { id: 1, name: "Dr Team", avatar: "👨‍⚕️", status: "online", character: "fortnite-character-1.png", backgroundColor: "#ff6b6b" },
+        { id: 2, name: "Mia Plays", avatar: "👩", status: "online", character: "fortnite-character-2.png", backgroundColor: "#4ecdc4" },
+      ],
+    },
+    {
+      id: 2,
+      players: [
+        { id: 3, name: "Keover", avatar: "👨", status: "online", character: "fortnite-character-3.png", backgroundColor: "#45b7d1" },
+      ],
+    },
+    {
+      id: 3,
+      players: [
+        { id: 4, name: "Nickmore", avatar: "🧑", status: "offline", character: "fortnite-character-4.png", backgroundColor: "#17848bff" },
+        { id: 5, name: "Sarah", avatar: "👩‍🦰", status: "online", character: "fortnite-character-5.png", backgroundColor: "#ff9ff3" },
+        { id: 6, name: "John", avatar: "👨‍🦱", status: "in-game", character: "fortnite-character-6.png", backgroundColor: "#74b9ff" },
+      ],
+    },
+    {
+      id: 4,
+      players: [
+        { id: 7, name: "Alex", avatar: "🧑‍🎤", status: "online", character: "fortnite-character-7.png", backgroundColor: "#fd79a8" },
+        { id: 8, name: "Emily", avatar: "👩‍🎤", status: "offline", character: "fortnite-character-8.png", backgroundColor: "#18b420ff" },
+        { id: 9, name: "Chris", avatar: "👨‍🎤", status: "in-game", character: "fortnite-character-9.png", backgroundColor: "#a29bfe" },
+        { id: 10, name: "Jessica", avatar: "👩‍🦳", status: "online", character: "fortnite-character-10.png", backgroundColor: "#ffeaa7" },
+      ],
+    },
+  ];
 
   return (
     <div className="mainboard">
@@ -135,31 +162,22 @@ const MainBoard = () => {
             <div className="game-separator"></div>
 
             <div className="players-list">
-              {players.map((player, index) => (
-                <div key={player.id} className={`player-item ${player.status === "offline" ? "inactive" : ""}`}>
+              {teams.map((team, index) => (
+                <div key={team.id} className="player-item">
                   <span className="player-number">{index + 1}</span>
                   <div className="player-avatars">
-                    <div
-                      className={`avatar-circle ${player.status === "offline" ? "inactive" : ""}`}
-                      style={{
-                        backgroundColor:
-                          index === 0 ? "#ff6b6b" : index === 1 ? "#4ecdc4" : index === 2 ? "#45b7d1" : "#95a5a6",
-                      }}
-                    >
-                      <span className="avatar-initial">{player.name.charAt(0)}</span>
-                    </div>
-                    <div
-                      className={`avatar-circle secondary ${player.status === "offline" ? "inactive" : ""}`}
-                      style={{
-                        backgroundColor:
-                          index === 0 ? "#ff9ff3" : index === 1 ? "#74b9ff" : index === 2 ? "#fd79a8" : "#b2bec3",
-                      }}
-                    >
-                      <span className="avatar-initial">{player.name.split(" ")[1]?.charAt(0) || "U"}</span>
-                    </div>
+                    {team.players.map((player) => (
+                      <div
+                        key={player.id}
+                        className={`avatar-circle ${player.status === "offline" ? "inactive" : ""}`}
+                        style={{ backgroundColor: player.backgroundColor }}
+                      >
+                        <span className="avatar-initial">{player.avatar}</span>
+                      </div>
+                    ))}
                   </div>
-                  <span className="player-name">{player.name}</span>
-                  <button className={`add-player ${player.status === "offline" ? "inactive" : ""}`}>+</button>
+                  <span className="player-name">{team.players.map(p => p.name).join(", ")}</span>
+                  <button className="add-player">+</button>
                 </div>
               ))}
             </div>

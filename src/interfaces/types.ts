@@ -17,3 +17,17 @@ export interface Game {
   genres?: Genre[];
   aggregated_rating?: number;
 }
+
+export interface Player {
+  id: number;
+  name: string;
+  avatar: string;
+  status: "online" | "offline" | "in-game";
+  character: string;
+  backgroundColor: string;
+}
+
+export interface Team {
+  id: number;
+  players: Player[];
+}
