@@ -139,15 +139,18 @@
 .fortnite-card {
   background: linear-gradient(135deg, var(--accent-primary-light), var(--accent-primary));
   border-radius: 0;
-  padding: 40px;
+  padding: 0 40px; /* Side padding only */
   width: 100%;
   height: 100%; /* Fill the entire center-widget container */
-  position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center; /* Center the content horizontally */
+}
+
+.card-header {
+  padding-top: 40px; /* Compensate for removed card padding */
 }
 
 .card-header h2 {
@@ -167,6 +170,7 @@
 .timer-wrapper {
   position: relative;
   margin-bottom: 30px;
+  flex-shrink: 0; /* Prevent the timer from shrinking */
 }
 
 .add-friend-btn {
@@ -206,13 +210,12 @@
 }
 
 .character-container {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  flex-grow: 1; /* Allow the container to grow and fill available space */
+  position: relative;
   width: 100%;
-  height: 60%;
-  overflow: hidden;
+  display: flex;
+  align-items: flex-end; /* Align character to the bottom */
+  justify-content: center;
 }
 
 .character-image {
@@ -220,6 +223,8 @@
   height: 100%;
   object-fit: contain;
   object-position: bottom;
+  max-width: 400px; /* Or a value that looks good */
+  max-height: 80%; /* Ensures it doesn't take up the whole container height */
 }
 
 .right-section {
