@@ -1,4 +1,5 @@
 import "./Categories.css"
+import shooterBanner from '../assets/images/shooter-games.png';
 
 const Categories = () => {
   const categories = [
@@ -35,7 +36,7 @@ const Categories = () => {
             <button className="category-icon">-▶</button>
           </div>
           <div className="featured-image">
-            <img src="/fortnite-character-1.png" alt="Shooter Games" />
+            <img src={shooterBanner} alt="Shooter Games" />
           </div>
         </div>
 

@@ -46,6 +46,12 @@
   min-height: 160px;
 }
 
+.category-card.featured .category-content,
+.category-card.featured .category-number {
+  position: relative; /* Ensure content is above the image */
+  z-index: 1;
+}
+
 .category-card.featured:hover {
   background: linear-gradient(135deg, var(--accent-secondary-light), var(--accent-secondary));
   transform: translateY(-5px);
@@ -126,13 +132,12 @@
 
 .featured-image {
   position: absolute;
-  right: -10px;
-  bottom: -10px;
-  width: 80px;
-  height: 80px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0.3;
-  overflow: hidden;
-  border-radius: 10px;
+  z-index: 0; 
 }
 
 .featured-image img {
