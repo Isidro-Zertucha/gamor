@@ -145,7 +145,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* Pushes content to top and bottom */
   align-items: center; /* Center the content horizontally */
 }
 
@@ -210,7 +210,7 @@
 }
 
 .character-container {
-  flex-grow: 1; /* Allow the container to grow and fill available space */
+  flex-grow: 1;
   position: relative;
   width: 100%;
   display: flex;
@@ -224,7 +224,6 @@
   object-fit: contain;
   object-position: bottom;
   max-width: 400px; /* Or a value that looks good */
-  max-height: 80%; /* Ensures it doesn't take up the whole container height */
 }
 
 .right-section {
@@ -511,12 +510,11 @@
 
 .selected-team-characters {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  transform: translate(-50%, -50%);
-  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent container from blocking interactions */
 }
 
 .team-character-image {
@@ -526,4 +524,29 @@
   border-radius: 25%;
   background-color: rgba(0, 0, 0, 0.199);
   transition: all 0.3s ease;
+  /* The transform is now column-specific */
+}
+
+.team-character-image-left {
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+.team-character-image-right {
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  .team-character-image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-character-image {
+    width: 40px;
+    height: 40px;
+  }
 }

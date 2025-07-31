@@ -134,15 +134,43 @@ const MainBoard = () => {
             />
             {selectedTeam && (
               <div className="selected-team-characters">
-                {selectedTeam.players.map((player, index) => (
-                  <img
-                    key={player.id}
-                    src={getCharacterImage(player.character)}
-                    alt={player.name}
-                    className="team-character-image"
-                    style={{ transform: `rotate(${index * (360 / selectedTeam.players.length)}deg) translate(150px) rotate(-${index * (360 / selectedTeam.players.length)}deg)` }}
-                  />
-                ))}
+                {selectedTeam.players.map((player, index) => {
+                  let style: React.CSSProperties = {};
+                  let className = "team-character-image";
+                  const playerCount = selectedTeam.players.length;
+
+                  const positions = {
+                    1: [{ top: '50%', side: 'left' }],
+                    2: [{ top: '50%', side: 'left' }, { top: '50%', side: 'right' }],
+                    3: [
+                      { top: '35%', side: 'left' },
+                      { top: '65%', side: 'left' },
+                      { top: '50%', side: 'right' },
+                    ],
+                    4: [
+                      { top: '35%', side: 'left' },
+                      { top: '65%', side: 'left' },
+                      { top: '35%', side: 'right' },
+                      { top: '65%', side: 'right' },
+                    ],
+                  };
+
+                  const key = Math.min(playerCount, 4) as keyof typeof positions;
+                  const pos = positions[key][index] || {};
+
+                  style = { top: pos.top };
+                  className += pos.side === 'left' ? ' team-character-image-left' : ' team-character-image-right';
+
+                  return (
+                    <img
+                      key={player.id}
+                      src={getCharacterImage(player.character)}
+                      alt={player.name}
+                      className={className}
+                      style={style}
+                    />
+                  );
+                })}
               </div>
             )}
           </div>
