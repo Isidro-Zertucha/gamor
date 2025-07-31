@@ -524,17 +524,15 @@
   border-radius: 25%;
   background-color: rgba(0, 0, 0, 0.199);
   transition: all 0.3s ease;
-  /* The transform is now column-specific */
+  transform: translate(-50%, -50%); /* Center the image on its coordinates */
 }
 
 .team-character-image-left {
-  left: 30px;
-  transform: translateY(-50%);
+  left: 25%; /* Responsive and symmetrical */
 }
 
 .team-character-image-right {
-  right: 30px;
-  transform: translateY(-50%);
+  left: 75%; /* Responsive and symmetrical */
 }
 
 @media (max-width: 768px) {
