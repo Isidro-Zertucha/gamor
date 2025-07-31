@@ -6,7 +6,6 @@ import MainBoard from "./components/MainBoard"
 import Categories from "./components/Categories"
 import "./App.css"
 import "./themes.css"
-import GamesPage from "./components/GamesPage"
 
 function App() {
   const [isLightTheme, setIsLightTheme] = useState(() => {
@@ -26,7 +25,6 @@ function App() {
       <Navbar />
       <MainBoard />
       <Categories />
-      <GamesPage/>
 
       {/* Theme toggle button for testing */}
       <button className="theme-toggle" onClick={() => setIsLightTheme(!isLightTheme)}>
