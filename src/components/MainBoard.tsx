@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import fortniteCharacter from '../assets/images/fortnite-character-1.png';
 import fortniteCharacterDark from '../assets/images/fortnite-character-2.png';
 import type { Team } from "../interfaces/types";
-import FilterPopup from './FilterPopup'; // Import the new component
+import FilterPopup from './FilterPopup';
+import { generateRandomTeams } from '../utils/teamData'; // Import the new function
 
 const MainBoard = () => {
   const [isLightTheme, setIsLightTheme] = useState(() => {
@@ -14,10 +15,16 @@ const MainBoard = () => {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedGame, setSelectedGame] = useState("Search");
+  const [teams, setTeams] = useState<Team[]>([]); // Initial empty teams
 
   const handleSelectGame = (gameName: string) => {
     setSelectedGame(gameName);
+    setTeams(generateRandomTeams(4)); // Generate teams on game selection
     setIsPopupOpen(false);
+  };
+
+  const handleSearchNow = () => {
+    setTeams(generateRandomTeams(4)); // Generate new random teams
   };
 
   useEffect(() => {
@@ -32,38 +39,6 @@ const MainBoard = () => {
       window.removeEventListener("theme-change", handleThemeChange);
     };
   }, []);
-  const teams: Team[] = [
-    {
-      id: 1,
-      players: [
-        { id: 1, name: "Dr Team", avatar: "👨‍⚕️", status: "online", character: "fortnite-character-11.png", backgroundColor: "#ff6b6b" },
-        { id: 2, name: "Mia Plays", avatar: "👩", status: "online", character: "fortnite-character-12.png", backgroundColor: "#4ecdc4" },
-      ],
-    },
-    {
-      id: 2,
-      players: [
-        { id: 3, name: "Keover", avatar: "👨", status: "online", character: "fortnite-character-3.png", backgroundColor: "#45b7d1" },
-      ],
-    },
-    {
-      id: 3,
-      players: [
-        { id: 4, name: "Nickmore", avatar: "🧑", status: "offline", character: "fortnite-character-4.png", backgroundColor: "#17848bff" },
-        { id: 5, name: "Sarah", avatar: "👩‍🦰", status: "online", character: "fortnite-character-5.png", backgroundColor: "#ff9ff3" },
-        { id: 6, name: "John", avatar: "👨‍🦱", status: "in-game", character: "fortnite-character-6.png", backgroundColor: "#74b9ff" },
-      ],
-    },
-    {
-      id: 4,
-      players: [
-        { id: 7, name: "Alex", avatar: "🧑‍🎤", status: "online", character: "fortnite-character-7.png", backgroundColor: "#fd79a8" },
-        { id: 8, name: "Emily", avatar: "👩‍🎤", status: "offline", character: "fortnite-character-8.png", backgroundColor: "#18b420ff" },
-        { id: 9, name: "Chris", avatar: "👨‍🎤", status: "in-game", character: "fortnite-character-9.png", backgroundColor: "#a29bfe" },
-        { id: 10, name: "Jessica", avatar: "👩‍🦳", status: "online", character: "fortnite-character-10.png", backgroundColor: "#ffeaa7" },
-      ],
-    },
-  ];
 
   const [selectedTeam, setSelectedTeam] = useState<Team | null>(null);
 
@@ -245,7 +220,7 @@ const MainBoard = () => {
               }
             </div>
 
-            <button className="search-now-btn">Search Now</button>
+            <button className="search-now-btn" onClick={handleSearchNow} disabled={selectedGame === 'Search'}>Search Now</button>
           </div>
         </div>
       </div>

@@ -495,6 +495,13 @@
   transform: translateY(-2px);
 }
 
+.search-now-btn:disabled {
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  transform: none;
+}
+
 @media (max-width: 1200px) {
   .mainboard {
     flex-direction: column;
