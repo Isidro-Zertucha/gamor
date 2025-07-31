@@ -301,6 +301,23 @@
   color: var(--text-primary);
 }
 
+.filter-button {
+  background-color: var(--background-primary);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: var(--background-quaternary);
+  color: var(--text-primary);
+}
+
 .player-count {
   background-color: var(--background-primary);
   padding: 6px 12px;

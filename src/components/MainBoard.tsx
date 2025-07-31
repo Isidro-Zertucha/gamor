@@ -4,12 +4,21 @@ import { useState, useEffect } from 'react';
 import fortniteCharacter from '../assets/images/fortnite-character-1.png';
 import fortniteCharacterDark from '../assets/images/fortnite-character-2.png';
 import type { Team } from "../interfaces/types";
+import FilterPopup from './FilterPopup'; // Import the new component
 
 const MainBoard = () => {
   const [isLightTheme, setIsLightTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme ? savedTheme === "light" : true;
   });
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedGame, setSelectedGame] = useState("Search");
+
+  const handleSelectGame = (gameName: string) => {
+    setSelectedGame(gameName);
+    setIsPopupOpen(false);
+  };
 
   useEffect(() => {
     const handleThemeChange = (event: Event) => {
@@ -201,13 +210,15 @@ const MainBoard = () => {
           </h3>
           <div className="game-content-container">
             <div className="game-info">
-              <span className="game-name">COD Warzone</span>
-              <span className="player-count"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-sliders">
-                <line x1="3" y1="8" x2="21" y2="8"></line>
-                <circle cx="9" cy="8" r="3"></circle>
-                <line x1="3" y1="16" x2="21" y2="16"></line>
-                <circle cx="15" cy="16" r="3"></circle>
-              </svg></span>
+              <span className="game-name">{selectedGame}</span>
+              <button className="filter-button" onClick={() => setIsPopupOpen(true)}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-sliders">
+                  <line x1="3" y1="8" x2="21" y2="8"></line>
+                  <circle cx="9" cy="8" r="3"></circle>
+                  <line x1="3" y1="16" x2="21" y2="16"></line>
+                  <circle cx="15" cy="16" r="3"></circle>
+                </svg>
+              </button>
             </div>
 
             <div className="game-separator"></div>
@@ -238,6 +249,7 @@ const MainBoard = () => {
           </div>
         </div>
       </div>
+      {isPopupOpen && <FilterPopup onSelectGame={handleSelectGame} onClose={() => setIsPopupOpen(false)} />}
     </div>
   )
 }
